@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="assets/css/text.css" />
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="spinner"></div>
+    </div>
     <!-- start the Header -->
     <header class="main_header">
       <div class="container">
@@ -27,17 +31,17 @@
           <img src="assets/img/logo.png" alt="logo" />
         </a>
 
+        
         <!-- Search Box -->
-        <form class="search_box">
-          <div class="select_box">
-            <select name="category">
-              <option>All Categories</option>
-              <option>Electronics</option>
-              <option>Phones</option>
-              <option>Fashion</option>
-              <!-- باقي الاختيارات -->
-            </select>
-          </div>
+        <div  class="select_box">
+          <select name="category" id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="beauty">Beauty</option>
+            <option value="fragrances">Fragrances</option>
+            <option value="furniture">Furniture</option>
+            <option value="groceries">Groceries</option>
+          </select>
+        </div>
           <input type="text" placeholder="Search for Products" />
           <button type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -203,15 +207,69 @@
     </div>
 
     <!-- end  the banner -->
+    <!-- end  the banner -->
+    <!-- Sidebar for Filters -->
+
+    <!-- end  the banner -->
+
     <!-- Products Section -->
     <section class="products_section">
       <div class="container">
         <h2>Latest Products</h2>
-        <div
+        <!-- <aside class="sidebar">
+          <h2>Filter</h2>
+
+          <div class="filter-group">
+            <h3>Category</h3>
+            <div id="category-filters"></div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Price</h3>
+            <input
+              type="number"
+              id="min-price"
+              placeholder="Min Price"
+              class="price-input"
+            />
+            <input
+              type="number"
+              id="max-price"
+              placeholder="Max Price"
+              class="price-input"
+            />
+          </div>
+
+          <button id="apply-filters">Apply Filters</button>
+        </aside> -->
+
+        <!-- sidebar filter -->
+        <div class="filters-container">
+          <div class="filters">
+            <h5>Filter by Category</h5>
+            <div id="category-filters"></div>
+        
+            <h5>Filter by Price</h5>
+            <div class="price-filters">
+              <input type="range" id="min-price" min="0" max="1000" value="0">
+              <input type="range" id="max-price" min="0" max="1000" value="1000">
+              <div class="price-range-values">
+                <span id="min-price-value">$0</span>
+                <span id="max-price-value">$1000</span>
+              </div>
+            </div>
+          </div>
+        
+          <button id="apply-filters" class="apply-filters-btn">Apply Filters</button>
+        </div>
+        
+        <div id="products_container" class="products-container"></div>
+        <!-- sidebar filter -->
+        <!-- <div
           class="container"
           class="products_grid"
           id="products_container"
-        ></div>
+        ></div> -->
       </div>
     </section>
 
@@ -307,5 +365,6 @@
     <!-- Footer -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/cart.js"></script>
+    <script src="assets/js/filter.js"></script>
   </body>
 </html>

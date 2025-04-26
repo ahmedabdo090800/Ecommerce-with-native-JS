@@ -81,3 +81,24 @@ function toggleFavorite(icon) {
 }
 
 fetchProducts();
+
+// preloder
+// Dark Mode Toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const darkModeToggle = document.createElement("button");
+  darkModeToggle.textContent = "Toggle Dark Mode";
+  darkModeToggle.style.position = "fixed";
+  darkModeToggle.style.top = "10px";
+  darkModeToggle.style.right = "10px";
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+  document.body.appendChild(darkModeToggle);
+});
+
+// Preloader hide after page load
+window.addEventListener("load", () => {
+  document.querySelector(".preloader").style.display = "none";
+});
+
+// preloder
